@@ -1,0 +1,426 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/Verification_Projects/UART
+Xdriver_sv_unit
+Z0 !s115 uart_intf
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 DXx4 work 8 file_pkg 0 22 8HPJ29Ln=RF`9oJ9Qe_Wi0
+Z3 !s110 1773057316
+VSVJ>WI<lR>a?]_bZ4KaIF1
+r1
+!s85 0
+!i10b 1
+!s100 WSGakPQbcfecGdeYPE<fC0
+ISVJ>WI<lR>a?]_bZ4KaIF1
+!i103 1
+S1
+Z4 dC:/intelFPGA/Verification_Projects/UART/sim_file
+w1773053256
+8../sv_file/driver.sv
+F../sv_file/driver.sv
+!i122 3096
+Z5 L0 1 0
+Z6 OV;L;2020.1;71
+31
+Z7 !s108 1773057316.000000
+!s107 ../sv_file/driver.sv|
+!s90 -reportprogress|300|-sv|../sv_file/driver.sv|
+!i113 1
+o-sv
+Z8 tCvgOpt 0
+Xenviroment_sv_unit
+R0
+R1
+R2
+Z9 !s110 1773057317
+VEQ8fz8=^[WKF]1BVY^nGP3
+r1
+!s85 0
+!i10b 1
+!s100 XAbLQDUI=Fa?glc5WEe0J1
+IEQ8fz8=^[WKF]1BVY^nGP3
+!i103 1
+S1
+R4
+Z10 w1773057146
+8../sv_file/enviroment.sv
+F../sv_file/enviroment.sv
+!i122 3099
+R5
+R6
+31
+Z11 !s108 1773057317.000000
+!s107 ../sv_file/enviroment.sv|
+!s90 -reportprogress|300|-sv|../sv_file/enviroment.sv|
+!i113 1
+o-sv
+R8
+Xfile_pkg
+R0
+R1
+Z12 !s110 1773057315
+!i10b 1
+!s100 cY2e7ci7UD4gU4EkNNa]f1
+Z13 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8HPJ29Ln=RF`9oJ9Qe_Wi0
+V8HPJ29Ln=RF`9oJ9Qe_Wi0
+S1
+R4
+Z14 w1773057002
+8../sv_file/file_pkg.sv
+F../sv_file/file_pkg.sv
+F..\sv_file\transaction.sv
+F..\sv_file\driver.sv
+F..\sv_file\generator.sv
+F..\sv_file\monitor.sv
+F..\sv_file\scoreboard.sv
+!i122 3092
+R5
+R6
+r1
+!s85 0
+31
+Z15 !s108 1773057315.000000
+!s107 ..\sv_file\scoreboard.sv|..\sv_file\monitor.sv|..\sv_file\generator.sv|..\sv_file\driver.sv|..\sv_file\transaction.sv|../sv_file/file_pkg.sv|
+!s90 -reportprogress|300|-sv|../sv_file/file_pkg.sv|
+!i113 1
+o-sv
+R8
+Xgenerator_sv_unit
+R0
+R1
+R2
+R3
+VFG?^1LEb6PWg[MUjPh8YF3
+r1
+!s85 0
+!i10b 1
+!s100 gz4m[H@Z7UV2VAoCcThUD2
+IFG?^1LEb6PWg[MUjPh8YF3
+!i103 1
+S1
+R4
+w1773056985
+8../sv_file/generator.sv
+F../sv_file/generator.sv
+!i122 3095
+R5
+R6
+31
+R7
+!s107 ../sv_file/generator.sv|
+!s90 -reportprogress|300|-sv|../sv_file/generator.sv|
+!i113 1
+o-sv
+R8
+Xmonitor_sv_unit
+R0
+R1
+R2
+R3
+V:<^B^jk_cnh[<;15J1o:^2
+r1
+!s85 0
+!i10b 1
+!s100 9=1OEji;Ban6GX:gE7jMU1
+I:<^B^jk_cnh[<;15J1o:^2
+!i103 1
+S1
+R4
+w1773051948
+8../sv_file/monitor.sv
+F../sv_file/monitor.sv
+!i122 3097
+R5
+R6
+31
+R7
+!s107 ../sv_file/monitor.sv|
+!s90 -reportprogress|300|-sv|../sv_file/monitor.sv|
+!i113 1
+o-sv
+R8
+Xscoreboard_sv_unit
+R1
+R2
+R9
+VOaDU>^CSHzJXaAFJQmFiT1
+r1
+!s85 0
+!i10b 1
+!s100 =eoAj3Z@@@5<@QW?Qa?IR3
+IOaDU>^CSHzJXaAFJQmFiT1
+!i103 1
+S1
+R4
+R14
+8../sv_file/scoreboard.sv
+F../sv_file/scoreboard.sv
+!i122 3098
+R5
+R6
+31
+R7
+!s107 ../sv_file/scoreboard.sv|
+!s90 -reportprogress|300|-sv|../sv_file/scoreboard.sv|
+!i113 1
+o-sv
+R8
+vtest
+R1
+R2
+DXx4 work 12 test_sv_unit 0 22 T^]23iZLKblO0a:P>Vn1?0
+R9
+Z16 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 UzbKmNLYeE5bMHIf]o28;3
+ILZe7T7LT2^c>2k:7Ybf^O2
+!s105 test_sv_unit
+S1
+R4
+w1773056811
+Z17 8../sv_file/test.sv
+Z18 F../sv_file/test.sv
+!i122 3100
+L0 3 18
+R6
+31
+R11
+Z19 !s107 ..\sv_file\enviroment.sv|../sv_file/test.sv|
+Z20 !s90 -reportprogress|300|-sv|../sv_file/test.sv|
+!i113 1
+o-sv
+R8
+Xtest_sv_unit
+R0
+R1
+R2
+R9
+VT^]23iZLKblO0a:P>Vn1?0
+r1
+!s85 0
+!i10b 1
+!s100 FV8OgGDmNnAF8fMZe]nHM3
+IT^]23iZLKblO0a:P>Vn1?0
+!i103 1
+S1
+R4
+R10
+R17
+R18
+F..\sv_file\enviroment.sv
+!i122 3100
+R5
+R6
+31
+R11
+R19
+R20
+!i113 1
+o-sv
+R8
+vtestbench
+R1
+R9
+!i10b 1
+!s100 fDRPcgTBfDT`;gffT4a=72
+R13
+IF1^5bUiFh?lk<4]PhY^SM1
+R16
+S1
+R4
+w1773056780
+8../sv_file/testbench.sv
+F../sv_file/testbench.sv
+!i122 3101
+L0 3 57
+R6
+r1
+!s85 0
+31
+R11
+!s107 ../sv_file/testbench.sv|
+!s90 -reportprogress|300|-sv|../sv_file/testbench.sv|
+!i113 1
+o-sv
+R8
+Xtransaction_sv_unit
+R1
+R12
+V8QC1DD86_:o0NSleYUH]61
+r1
+!s85 0
+!i10b 1
+!s100 P=@Q@BiX9dDL?P78DCZR`1
+I8QC1DD86_:o0NSleYUH]61
+!i103 1
+S1
+R4
+w1773056832
+8../sv_file/transaction.sv
+F../sv_file/transaction.sv
+!i122 3093
+R5
+R6
+31
+R15
+!s107 ../sv_file/transaction.sv|
+!s90 -reportprogress|300|-sv|../sv_file/transaction.sv|
+!i113 1
+o-sv
+R8
+vuard_boud_rate
+R1
+!s110 1772906527
+!i10b 1
+!s100 lAY70X_AOM84[[fL^f?_00
+R13
+ImOaXg27;0IU<NM339l?b<3
+R16
+S1
+R4
+w1772882972
+Z21 8../rtl_file/uart_boud_rate.sv
+Z22 F../rtl_file/uart_boud_rate.sv
+!i122 1931
+Z23 L0 1 78
+R6
+r1
+!s85 0
+31
+!s108 1772906527.000000
+Z24 !s107 ../rtl_file/uart_boud_rate.sv|
+Z25 !s90 -reportprogress|300|../rtl_file/uart_boud_rate.sv|
+!i113 1
+R8
+vuart_boud_rate
+R1
+Z26 !s110 1773057314
+!i10b 1
+!s100 F>SXCzBO37=C88W0FYk?33
+R13
+IU`nVlk6W7iZdQhOU:5Th>1
+R16
+S1
+R4
+w1772966086
+R21
+R22
+!i122 3088
+R23
+R6
+r1
+!s85 0
+31
+Z27 !s108 1773057314.000000
+R24
+R25
+!i113 1
+R8
+Yuart_intf
+R1
+R3
+!i10b 1
+!s100 IF_8H:B;SP?W=MPE3_Pba2
+R13
+I_?G12I@1PzLS0bImS8zK33
+R16
+S1
+R4
+w1773056895
+8../sv_file/interface.sv
+F../sv_file/interface.sv
+!i122 3094
+R5
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../sv_file/interface.sv|
+!s90 -reportprogress|300|-sv|../sv_file/interface.sv|
+!i113 1
+o-sv
+R8
+vuart_rx
+R1
+R26
+!i10b 1
+!s100 BgiJAUdUEmFUTR5n`QMj60
+R13
+IF3YDKF:E7b7E@@jo?e7RE0
+R16
+S1
+R4
+w1772978611
+8../rtl_file/uart_rx.sv
+F../rtl_file/uart_rx.sv
+!i122 3090
+L0 2 314
+R6
+r1
+!s85 0
+31
+R27
+!s107 ../rtl_file/uart_rx.sv|
+!s90 -reportprogress|300|../rtl_file/uart_rx.sv|
+!i113 1
+R8
+vuart_top
+R1
+R12
+!i10b 1
+!s100 ZYlkSJCUFU;TQ:=Qe6iJD0
+R13
+IXB7SV=FEF2QZBAlX7Fo001
+R16
+S1
+R4
+w1773057273
+8../rtl_file/uart_top.sv
+F../rtl_file/uart_top.sv
+!i122 3091
+L0 1 74
+R6
+r1
+!s85 0
+31
+R15
+!s107 ../rtl_file/uart_top.sv|
+!s90 -reportprogress|300|../rtl_file/uart_top.sv|
+!i113 1
+R8
+vuart_tx
+R1
+R26
+!i10b 1
+!s100 3TCS6;oVHIXZX3R4]`?^g0
+R13
+IUT`BIjmz7XH;CE7O5>2da3
+R16
+S1
+R4
+w1773057306
+8../rtl_file/uart_tx.sv
+F../rtl_file/uart_tx.sv
+!i122 3089
+L0 2 193
+R6
+r1
+!s85 0
+31
+R27
+!s107 ../rtl_file/uart_tx.sv|
+!s90 -reportprogress|300|../rtl_file/uart_tx.sv|
+!i113 1
+R8

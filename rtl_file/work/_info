@@ -1,0 +1,155 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA/Verification_Projects/UART/rtl_file
+vuard_boud_rate
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1772951567
+!i10b 1
+!s100 lAY70X_AOM84[[fL^f?_00
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ICjg[=K>KOa6_@Pd1B4G8T2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1772882972
+Z4 8uart_boud_rate.sv
+Z5 Fuart_boud_rate.sv
+!i122 140
+Z6 L0 1 78
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1772951567.000000
+Z8 !s107 uart_boud_rate.sv|
+Z9 !s90 -reportprogress|300|uart_boud_rate.sv|
+!i113 1
+Z10 tCvgOpt 0
+vuart_boud_rate
+R1
+!s110 1772951747
+!i10b 1
+!s100 F>SXCzBO37=C88W0FYk?33
+R2
+I@=QFKzm_hV^MSBaI`[3cN2
+R3
+S1
+R0
+w1772951621
+R4
+R5
+!i122 145
+R6
+R7
+r1
+!s85 0
+31
+!s108 1772951747.000000
+R8
+R9
+!i113 1
+R10
+vuart_rx
+R1
+!s110 1772967590
+!i10b 1
+!s100 T7WJ2n0ILLTZ3^j3cDJ7K1
+R2
+I`83N7HR5Hd?LzO=z=A?FS3
+R3
+S1
+R0
+w1772967586
+8uart_rx.sv
+Fuart_rx.sv
+!i122 177
+L0 2 328
+R7
+r1
+!s85 0
+31
+!s108 1772967590.000000
+!s107 uart_rx.sv|
+!s90 -reportprogress|300|uart_rx.sv|
+!i113 1
+R10
+vuart_tb
+R1
+!s110 1772967555
+!i10b 1
+!s100 YBF_<C]^F;_QQbnYVb@DB2
+R2
+I9WjVQTS]UX^=eEeX6L:M72
+R3
+S1
+R0
+w1772967550
+8uart_tb.sv
+Fuart_tb.sv
+!i122 175
+L0 3 117
+R7
+r1
+!s85 0
+31
+!s108 1772967555.000000
+!s107 uart_tb.sv|
+!s90 -reportprogress|300|uart_tb.sv|
+!i113 1
+R10
+vuart_top
+R1
+!s110 1772951624
+!i10b 1
+!s100 ZYlkSJCUFU;TQ:=Qe6iJD0
+R2
+Ii<;RF^VRJOgkI2YKZBnao0
+R3
+S1
+R0
+w1772907844
+8uart_top.sv
+Fuart_top.sv
+!i122 143
+L0 1 74
+R7
+r1
+!s85 0
+31
+!s108 1772951624.000000
+!s107 uart_top.sv|
+!s90 -reportprogress|300|uart_top.sv|
+!i113 1
+R10
+vuart_tx
+R1
+!s110 1772954077
+!i10b 1
+!s100 7BSM@;U`TM6BKFcj>Va?>1
+R2
+IiTnDbPOEHIM[OCB=e65h^2
+R3
+S1
+R0
+w1772954064
+8uart_tx.sv
+Fuart_tx.sv
+!i122 161
+L0 2 207
+R7
+r1
+!s85 0
+31
+!s108 1772954077.000000
+!s107 uart_tx.sv|
+!s90 -reportprogress|300|uart_tx.sv|
+!i113 1
+R10
