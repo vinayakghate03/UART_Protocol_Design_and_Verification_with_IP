@@ -15,9 +15,7 @@
       <a href="#design">Design Space Exploration and Design Strategies</a>
       <ul>
         <li>
-          <ul>
             <li><a href="#operations">Operations</a></li>
-          </ul>
         </li>
         <li><a href="#signals">Signals Definition</a></li>
         <li>
