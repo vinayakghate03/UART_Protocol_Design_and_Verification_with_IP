@@ -45,10 +45,7 @@
     <li><a href="#results">Results</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
     <li>
-          <a href="#Custom IP Design Extension">Custom IP Design Extension</a>
-            <ul>
-              <li><a href="#Async_FIFO_design_1_wrapper.v">Async_FIFO_design_1_wrapper.v</a></li>
-            </ul>
+          <a href="#custom_ip_design">Custom UART IP Design</a>
         </li>
     <li><a href="#references">References</a></li>
   </ul>
