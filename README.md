@@ -30,7 +30,7 @@
       </ul>
     </li>
     <li>
-      <a href="#testbench">Testbench Case Implementation</a>
+      <a href="#UART Testbench Case Implementation">UART Testbench Case Implementation</a>
       <ul>
         <li><a href="#waveforms">Waveforms</a></li>
       </ul>
@@ -189,7 +189,7 @@
   </li>
 </ol>
 
-<h2 id="uart_testbench">UART Testbench Case Implementation</h2>
+<h2 id="UART Testbench Case Implementation">UART Testbench Case Implementation</h2>
 <h3 id="tb_uart">tb_uart.sv</h3>
 
 <p>
