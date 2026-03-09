@@ -38,8 +38,8 @@
     <li>
       <a href="#systemverilog">System Verilog Enviroment Verification</a>
       <ul>
-        <li><a href="#execution">Compile and Execution</a></li> 
-        <li><a href="#Verification">Verification Waveforms</a></li>
+        <li><a href="#Verification">Verification Components</a></li>
+        <li><a href="#execution">Simulation Execution</a></li> 
       </ul>
     </li>
     <li><a href="#results">Results</a></li>
@@ -220,13 +220,11 @@
   The SystemVerilog verification environment is designed to verify the functional correctness of the UART design. It ensures that data transmitted by <code>uart_tx.sv</code> is correctly received by <code>uart_rx.sv</code>, while monitoring control signals like <code>tx_busy</code>, <code>rx_data_valid</code>, and optional parity or framing errors. The environment is developed in SystemVerilog and simulated using <strong>ModelSim</strong>, with waveforms generated for analysis.
 </p>
 
-<h3 id="testbench">testnech.sv/h3>
-
 <p>
-  <a href="sv_file/testbench.sv"><code>uart_tb.sv</code></a> is the top-level testbench for the UART design. It instantiates the DUT (transmitter and receiver) and connects it with the verification components such as generator, driver, and monitor. The testbench generates system clocks, reset signals, and drives stimulus into the DUT. It also collects and checks responses for correctness.
+  <a href="sv_file/testbench.sv"><code>testbench.sv</code></a> is the top-level testbench for the UART design. It instantiates the DUT (transmitter and receiver) and connects it with the verification components such as generator, driver, and monitor. The testbench generates system clocks, reset signals, and drives stimulus into the DUT. It also collects and checks responses for correctness.
 </p>
 
-<h3 id="uvm_components">Verification Components</h3>
+<h3 id="Verification">Verification Components</h3>
 
 <ol>
   <li>
