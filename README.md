@@ -1,61 +1,186 @@
-# UART Protocol Design and Verification with IP
+<h1>
+  Design and Verification of UART (Transmitter & Receiver)
+</h1>
+<p>
+  This repository contains Verilog and SystemVerilog code for a configurable UART module with TX and RX.
+</p>
 
-## 📖 Project Overview
+<body>
+  <!-- Table of Contents -->
+  <h2>Table of Contents</h2>
+  <ul>
+    <li><a href="#author">Author</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li>
+      <a href="#design">Design Architecture and Strategies</a>
+      <ul>
+        <li><a href="#modules">Modules Overview</a></li>
+        <li><a href="#signals">Signal Definition</a></li>
+        <li><a href="#baud">Baud Rate Generation</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#testbench">Testbench Implementation</a>
+      <ul>
+        <li><a href="#waveforms">Simulation Waveforms</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#systemverilog">SystemVerilog Verification Environment</a>
+      <ul>
+        <li><a href="#execution">Compile & Run</a></li>
+        <li><a href="#verification">Verification Waveforms</a></li>
+      </ul>
+    </li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li>
+      <a href="#custom_ip">Custom IP Design Extension</a>
+      <ul>
+        <li><a href="#uart_ip_wrapper">UART_IP_wrapper.v</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
 
-This repository contains the complete **RTL design, custom IPs, and SystemVerilog verification** of a UART (Universal Asynchronous Receiver/Transmitter) protocol.  
+  <!-- Sections -->
+  <h2 id="author">Author</h2>
+  <p>Vinayak Ghate</p>
 
-The project demonstrates full **design and verification flow**:
-1. RTL design in Xilinx Vivado  
-2. IP packaging for modular TX, RX, and baud-rate blocks  
-3. Testbench simulation in Vivado  
-4. Verification in ModelSim using SystemVerilog UVM-like environment  
-5. Capture and documentation of simulation results  
+  <h2 id="introduction">Introduction</h2>
+  <p style="text-align: justify;">
+    This project presents the design and verification of a configurable <strong>UART Transmitter (TX) and Receiver (RX)</strong> module. 
+    The UART supports configurable baud rate, data width, parity, and stop bits. The project demonstrates a complete RTL-to-verification workflow, including waveform capture, simulation, and IP packaging.
+  </p>
 
-The design supports configurable **baud rate, data width**, and can be easily integrated into larger systems as modular IP blocks.
+  <p style="text-align: justify;">
+    The design includes independent TX and RX modules, along with baud rate generation, data serialization/deserialization, and optional parity handling. 
+    Verification is performed using a modular SystemVerilog environment with monitors, scoreboards, and self-checking testbenches. 
+  </p>
 
----
+  <h2 id="design">Design Architecture and Strategies</h2>
+  <p style="text-align: justify;">
+    The UART design is modular, consisting of the following components:
+  </p>
 
-## 🏗️ System Architecture and Design
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="Design_Verification_Result/UART_Block.png" alt="UART Architecture" width="1000" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
+    <p style="text-align: center; font-style: italic; font-size: 14px;">Figure 1: UART Block Diagram showing TX, RX, and Baud Generator modules.</p>
+  </div>
 
-The UART system is modular, consisting of:
+  <h3 id="modules">Modules Overview</h3>
+  <ol>
+    <li><strong><code>uart_top.v</code></strong>: Top-level wrapper module integrating TX, RX, and baud rate generator.</li>
+    <li><strong><code>uart_tx.v</code></strong>: Transmitter module handling data serialization, start/stop bits, and optional parity.</li>
+    <li><strong><code>uart_rx.v</code></strong>: Receiver module handling deserialization, parity check, and stop bit verification.</li>
+    <li><strong><code>baud_gen.v</code></strong>: Generates clock enable pulses based on the system clock and configured baud rate.</li>
+  </ol>
 
-- **UART Transmitter (TX)** – Serializes data from parallel input and drives the serial line.  
-- **UART Receiver (RX)** – Deserializes the serial input into parallel output data.  
-- **Baud Rate Generator (BRG)** – Produces timing signals for correct bit transmission.  
-- **Custom IPs** – Each functional block is wrapped as an IP in Vivado.  
+  <h3 id="signals">Signal Definition</h3>
+  <ul>
+    <li><strong>clk</strong>: System clock input</li>
+    <li><strong>rst_n</strong>: Active low reset</li>
+    <li><strong>tx_data[7:0]</strong>: Parallel data input to transmitter</li>
+    <li><strong>tx_valid</strong>: TX data valid signal</li>
+    <li><strong>tx_serial</strong>: UART serial output</li>
+    <li><strong>rx_serial</strong>: UART serial input</li>
+    <li><strong>rx_data[7:0]</strong>: Parallel data output from receiver</li>
+    <li><strong>rx_valid</strong>: RX data valid signal</li>
+    <li><strong>baud_rate</strong>: Configurable parameter for baud generation</li>
+  </ul>
 
-**Top-level integration:**
-- TX, RX, and BRG IPs instantiated in a wrapper module.  
-- Verified functionality with Vivado simulation before moving to ModelSim for advanced verification.  
+  <h3 id="baud">Baud Rate Generation</h3>
+  <p style="text-align: justify;">
+    A parameterized baud generator creates enable pulses to drive TX and RX sampling at the configured baud rate. This module divides the system clock according to the formula:
+    <br><code>baud_tick = clk / (baud_rate × oversampling_factor)</code>
+  </p>
 
----
+  <h2 id="testbench">Testbench Implementation</h2>
+  <p style="text-align: justify;">
+    The UART testbench <code>tb_uart.sv</code> provides a self-checking environment for simulation:
+  </p>
+  <ul>
+    <li>Generates random data for TX module</li>
+    <li>Monitors RX output for correctness</li>
+    <li>Validates start/stop bits and optional parity</li>
+    <li>Reports errors and passes automatically</li>
+  </ul>
 
-## 🔬 Verification Workflow
+  <h3 id="waveforms">Simulation Waveforms</h3>
+  <p><img src="Design_Verification_Result/UART_Waveform.png" alt="UART Simulation Waveform" width="1000"></p>
+  <p style="text-align: center; font-style: italic; font-size: 14px;">Figure 2: UART TX and RX simulation waveform (Vivado/ModelSim)</p>
 
-### Vivado Simulation
-- Compiled RTL modules and testbenches in Vivado.  
-- Performed **functional simulation** for TX, RX, and full UART system.  
-- Debugged using waveform viewer.  
+  <h2 id="systemverilog">SystemVerilog Verification Environment</h2>
+  <p style="text-align: justify;">
+    The SystemVerilog environment uses modular classes including driver, monitor, and scoreboard for functional verification. It ensures correct transmission and reception over the UART interface for various test cases including:
+  </p>
+  <ul>
+    <li>Single byte transfer</li>
+    <li>Continuous byte stream</li>
+    <li>Random data with full/empty checks</li>
+  </ul>
 
-### IP Wrapping
-- Generated **Vivado IPs** for TX, RX, and Baud Rate Generator.  
-- Integrated IPs in wrapper module for system-level testing.  
-- Verified modules individually and in combination with testbench.
+  <h3 id="execution">Compile & Run</h3>
+  <p style="text-align: justify;">
+    Simulation executed in ModelSim using standard compilation and run commands. Results captured as waveform images in <code>Design_Verification_Result</code>.
+  </p>
+  <p><img src="Design_Verification_Result/UART_SV_Waveform.png" alt="UART SV Simulation" width="1000"></p>
+  <p style="text-align: center; font-style: italic; font-size: 14px;">Figure 3: UART SystemVerilog verification waveform (ModelSim)</p>
 
-### ModelSim Verification
-- Created **SystemVerilog verification environment** (drivers, monitors, scoreboard).  
-- Ran simulations to validate correct transmission and reception of data.  
-- Captured waveforms and checked parity, framing, and busy signals.  
-- Verification results stored in `RTL_Design_and_Verification_Result/`.  
+  <h3 id="verification">Verification Waveforms</h3>
+  <p style="text-align: justify;">
+    The environment verified TX/RX data integrity, flag assertion, and timing correctness for different baud rates.
+  </p>
 
----
+  <h2 id="results">Results</h2>
+  <ul>
+    <li>TX correctly serializes data with start, stop, and optional parity bits</li>
+    <li>RX correctly deserializes and validates received data</li>
+    <li>All test cases passed successfully</li>
+    <li>Configurable baud rates verified for 9600, 115200 bps, etc.</li>
+    <li>No data loss observed during full-speed simulation</li>
+  </ul>
 
-## 🛠️ Tools Used
+  <h2 id="conclusion">Conclusion</h2>
+  <p style="text-align: justify;">
+    The UART design is a robust, parameterized, and verified module for FPGA or ASIC integration. 
+    Modular architecture allows easy reuse and integration into larger SoC designs. Verification confirmed correct operation across different timing scenarios, ensuring reliable serial communication.
+  </p>
 
-- **Design & Synthesis:** Xilinx Vivado  
-- **Verification:** ModelSim (Mentor Graphics / Siemens)  
-- **Languages:** SystemVerilog, Verilog  
+  <h2 id="custom_ip">Custom IP Design Extension</h2>
+  <p style="text-align: justify;">
+    UART is packaged as a reusable IP for Vivado:
+  </p>
+  <ul>
+    <li><strong>Parameterizable:</strong> Configurable data width, parity, stop bits, and baud rate</li>
+    <li><strong>Modular:</strong> TX, RX, and baud generator instantiated inside the IP wrapper</li>
+    <li><strong>Integration Ready:</strong> Exposed ports for top-level instantiation in FPGA projects</li>
+  </ul>
 
----
+  <h3 id="uart_ip_wrapper">UART_IP_wrapper.v</h3>
+  <p style="text-align: justify;">
+    <a href="IP_Block_Design/UART_IP_wrapper.v">
+      <code>./IP_Block_Design/UART_IP_wrapper.v</code>
+    </a>
+    <br>
+    <a href="./IP_Block_Design/component.xml">
+      <code>./IP_Block_Design/component.xml</code>
+    </a>
+    <br>
+    This wrapper allows integration of the UART IP into Vivado IP catalog for use in larger FPGA designs.
+  </p>
 
-## 📁 Repository Structure
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="IP_Block_Design/UART_IP_Block.png" alt="UART IP Block" width="1000" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
+    <p style="text-align: center; font-style: italic; font-size: 14px;">Figure 4: UART IP block design with top-level wrapper</p>
+  </div>
+
+  <h2 id="references">References</h2>
+  <ul>
+    <li>AMBA UART Protocol and Specifications (ARM)</li>
+    <li>Xilinx Vivado Design Suite Documentation</li>
+    <li>ModelSim User Guide, Mentor Graphics</li>
+    <li>SystemVerilog Verification Concepts, Udemy Online Course</li>
+    <li>Asynchronous Serial Communication & UART Design Tutorials (Online Resources)</li>
+  </ul>
+</body>
