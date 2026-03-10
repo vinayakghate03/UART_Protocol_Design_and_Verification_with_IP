@@ -267,7 +267,7 @@
 
 <h3>2. Synthesis Result</h3>
 <p style="text-align: justify;">
-  The UART design was successfully synthesized on <strong>Xilinx Vivado</strong> for a standard configuration of 8-bit data width and 115200 baud rate. 
+  The UART design was successfully synthesized on <strong>Xilinx Vivado</strong> for a standard configuration of 8-bit data width and 9600 baud rate. 
   The synthesis report indicates that the design meets timing requirements and is able to operate at the target system frequency.
 </p>
 
